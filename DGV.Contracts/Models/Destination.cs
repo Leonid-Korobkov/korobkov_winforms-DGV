@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace korobkov_winforms_DGV
+namespace DGV.Contracts.Models
 {
     /// <summary>
     /// Направления для туров

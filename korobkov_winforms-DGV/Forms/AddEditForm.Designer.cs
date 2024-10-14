@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -37,6 +38,7 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxSumDop = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownSumPerson = new System.Windows.Forms.NumericUpDown();
             this.checkBoxWiFi = new System.Windows.Forms.CheckBox();
             this.numericUpDownCountPeople = new System.Windows.Forms.NumericUpDown();
@@ -51,15 +53,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.textBoxSumDop = new System.Windows.Forms.NumericUpDown();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxSumDop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSumPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountPeople)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountNights)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxSumDop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,30 +104,30 @@
             this.panel2.Controls.Add(this.btnOk);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 854);
+            this.panel2.Location = new System.Drawing.Point(0, 1052);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(896, 168);
             this.panel2.TabIndex = 2;
             // 
             // btnCancel
             // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(292, 61);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(146, 57);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOk
             // 
-            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(76, 61);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(183, 57);
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "ОК";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // label2
             // 
@@ -156,8 +159,26 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 168);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(896, 686);
+            this.panel3.Size = new System.Drawing.Size(896, 884);
             this.panel3.TabIndex = 3;
+            // 
+            // textBoxSumDop
+            // 
+            this.textBoxSumDop.DecimalPlaces = 2;
+            this.textBoxSumDop.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.textBoxSumDop.Location = new System.Drawing.Point(438, 575);
+            this.textBoxSumDop.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.textBoxSumDop.Name = "textBoxSumDop";
+            this.textBoxSumDop.Size = new System.Drawing.Size(382, 31);
+            this.textBoxSumDop.TabIndex = 16;
             // 
             // numericUpDownSumPerson
             // 
@@ -217,7 +238,7 @@
             // 
             this.numericUpDownCountNights.Location = new System.Drawing.Point(438, 212);
             this.numericUpDownCountNights.Maximum = new decimal(new int[] {
-            30,
+            35,
             0,
             0,
             0});
@@ -323,29 +344,15 @@
             this.label3.Size = new System.Drawing.Size(0, 51);
             this.label3.TabIndex = 0;
             // 
-            // textBoxSumDop
+            // errorProvider1
             // 
-            this.textBoxSumDop.DecimalPlaces = 2;
-            this.textBoxSumDop.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.textBoxSumDop.Location = new System.Drawing.Point(438, 575);
-            this.textBoxSumDop.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.textBoxSumDop.Name = "textBoxSumDop";
-            this.textBoxSumDop.Size = new System.Drawing.Size(382, 31);
-            this.textBoxSumDop.TabIndex = 16;
+            this.errorProvider1.ContainerControl = this;
             // 
             // AddEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 1022);
+            this.ClientSize = new System.Drawing.Size(896, 1220);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -364,10 +371,11 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxSumDop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSumPerson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountPeople)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountNights)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxSumDop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,7 +396,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxDirection;
-        private System.Windows.Forms.NumericUpDown numericUpDownCountNights;
         private System.Windows.Forms.DateTimePicker dateTimePickerDeparture;
         private System.Windows.Forms.CheckBox checkBoxWiFi;
         private System.Windows.Forms.NumericUpDown numericUpDownCountPeople;
@@ -397,5 +404,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownSumPerson;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.NumericUpDown textBoxSumDop;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.NumericUpDown numericUpDownCountNights;
     }
 }

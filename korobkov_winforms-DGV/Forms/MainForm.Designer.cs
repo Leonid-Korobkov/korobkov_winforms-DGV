@@ -68,19 +68,19 @@
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(114, 36);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(114, 40);
             this.справкаToolStripMenuItem.Text = "Правка";
             // 
             // пToolStripMenuItem
             // 
             this.пToolStripMenuItem.Name = "пToolStripMenuItem";
-            this.пToolStripMenuItem.Size = new System.Drawing.Size(126, 36);
+            this.пToolStripMenuItem.Size = new System.Drawing.Size(126, 40);
             this.пToolStripMenuItem.Text = "Справка";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(103, 36);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(103, 40);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -101,7 +101,7 @@
             // BtnAddNewTour
             // 
             this.BtnAddNewTour.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnAddNewTour.Image = ((System.Drawing.Image)(resources.GetObject("BtnAddNewTour.Image")));
+            this.BtnAddNewTour.Image = global::korobkov_winforms_DGV.Properties.Resources.plus;
             this.BtnAddNewTour.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnAddNewTour.Name = "BtnAddNewTour";
             this.BtnAddNewTour.Size = new System.Drawing.Size(46, 44);
@@ -111,20 +111,20 @@
             // BtnEditTour
             // 
             this.BtnEditTour.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnEditTour.Image = ((System.Drawing.Image)(resources.GetObject("BtnEditTour.Image")));
+            this.BtnEditTour.Image = global::korobkov_winforms_DGV.Properties.Resources.edit;
             this.BtnEditTour.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnEditTour.Name = "BtnEditTour";
-            this.BtnEditTour.Size = new System.Drawing.Size(46, 36);
+            this.BtnEditTour.Size = new System.Drawing.Size(46, 44);
             this.BtnEditTour.Text = "toolStripButton2";
             this.BtnEditTour.Click += new System.EventHandler(this.BtnEditTour_Click);
             // 
             // BtnRemoveTour
             // 
             this.BtnRemoveTour.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BtnRemoveTour.Image = ((System.Drawing.Image)(resources.GetObject("BtnRemoveTour.Image")));
+            this.BtnRemoveTour.Image = global::korobkov_winforms_DGV.Properties.Resources.remove;
             this.BtnRemoveTour.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BtnRemoveTour.Name = "BtnRemoveTour";
-            this.BtnRemoveTour.Size = new System.Drawing.Size(46, 36);
+            this.BtnRemoveTour.Size = new System.Drawing.Size(46, 44);
             this.BtnRemoveTour.Text = "toolStripButton3";
             this.BtnRemoveTour.Click += new System.EventHandler(this.BtnRemoveTour_Click);
             // 
@@ -179,14 +179,18 @@
             // 
             // toursDGV
             // 
+            this.toursDGV.AllowUserToAddRows = false;
+            this.toursDGV.AllowUserToDeleteRows = false;
             this.toursDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.toursDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toursDGV.Location = new System.Drawing.Point(0, 98);
             this.toursDGV.Name = "toursDGV";
+            this.toursDGV.ReadOnly = true;
             this.toursDGV.RowHeadersWidth = 82;
             this.toursDGV.RowTemplate.Height = 33;
             this.toursDGV.Size = new System.Drawing.Size(1356, 556);
             this.toursDGV.TabIndex = 5;
+            this.toursDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.toursDGV_CellFormatting);
             // 
             // MainForm
             // 
@@ -229,10 +233,10 @@
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusTotalCount;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusTotalSum;
-        private System.Windows.Forms.DataGridView toursDGV;
         private System.Windows.Forms.ToolStripButton BtnAddNewTour;
         private System.Windows.Forms.ToolStripButton BtnEditTour;
         private System.Windows.Forms.ToolStripButton BtnRemoveTour;
+        private System.Windows.Forms.DataGridView toursDGV;
     }
 }
 

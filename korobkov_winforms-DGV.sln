@@ -10,6 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Contracts", "DGV.Contracts\DGV.Contracts.csproj", "{9260E278-D393-4CB7-A1E1-46F35BB86374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Tour.Manager", "DGV.Tour.Manager\DGV.Tour.Manager.csproj", "{C43922D8-ABAD-4E44-9B9F-CBC36EA11CB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Tour.Storage", "DGV.Tour.Storage\DGV.Tour.Storage.csproj", "{74E59072-811C-490C-8BBB-D6B43D655FB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +26,18 @@ Global
 		{165961D1-9830-43F8-9F5A-8D8E455D4E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{165961D1-9830-43F8-9F5A-8D8E455D4E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{165961D1-9830-43F8-9F5A-8D8E455D4E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9260E278-D393-4CB7-A1E1-46F35BB86374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9260E278-D393-4CB7-A1E1-46F35BB86374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9260E278-D393-4CB7-A1E1-46F35BB86374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9260E278-D393-4CB7-A1E1-46F35BB86374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43922D8-ABAD-4E44-9B9F-CBC36EA11CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43922D8-ABAD-4E44-9B9F-CBC36EA11CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43922D8-ABAD-4E44-9B9F-CBC36EA11CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43922D8-ABAD-4E44-9B9F-CBC36EA11CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E59072-811C-490C-8BBB-D6B43D655FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E59072-811C-490C-8BBB-D6B43D655FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E59072-811C-490C-8BBB-D6B43D655FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E59072-811C-490C-8BBB-D6B43D655FB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

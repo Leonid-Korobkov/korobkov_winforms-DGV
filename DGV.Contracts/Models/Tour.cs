@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace korobkov_winforms_DGV
+namespace DGV.Contracts.Models
 {
     /// <summary>
     /// Класс для горячего тура
@@ -19,7 +19,6 @@ namespace korobkov_winforms_DGV
         /// </summary>
         [Required]
         [DisplayName("Назначение")]
-        [StringLength(50, MinimumLength = 3)]
         public Destination Destination { get; set; }
 
         /// <summary>
