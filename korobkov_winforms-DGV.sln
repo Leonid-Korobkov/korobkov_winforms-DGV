@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C159925-48CA-466F-BC4D-3E06AA773E6F}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Contracts", "DGV.Contracts\DGV.Contracts.csproj", "{9260E278-D393-4CB7-A1E1-46F35BB86374}"

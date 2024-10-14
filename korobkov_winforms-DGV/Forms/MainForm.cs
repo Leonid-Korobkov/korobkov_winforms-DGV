@@ -28,12 +28,13 @@ namespace korobkov_winforms_DGV
             toursDGV.DataSource = bindingSource;
             toursDGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            toursDGV.AutoGenerateColumns = false;
+            //toursDGV.AutoGenerateColumns = false;
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
             bindingSource.DataSource = await tourManager.GetAllToursAsync();
+            toursDGV.Columns["Id"].Visible = false;
             await SetStats();
         }
 
