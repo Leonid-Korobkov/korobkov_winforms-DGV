@@ -34,21 +34,21 @@
             this.пToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.BtnAddNewTour = new System.Windows.Forms.ToolStripButton();
+            this.BtnEditTour = new System.Windows.Forms.ToolStripButton();
+            this.BtnRemoveTour = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusCountDop = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusTotalSumDop = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusTotalCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusTotalSum = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toursDGV = new System.Windows.Forms.DataGridView();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toursDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -61,41 +61,72 @@
             this.выходToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1356, 40);
+            this.menuStrip2.Size = new System.Drawing.Size(1356, 48);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(114, 44);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(114, 40);
             this.справкаToolStripMenuItem.Text = "Правка";
             // 
             // пToolStripMenuItem
             // 
             this.пToolStripMenuItem.Name = "пToolStripMenuItem";
-            this.пToolStripMenuItem.Size = new System.Drawing.Size(126, 44);
+            this.пToolStripMenuItem.Size = new System.Drawing.Size(126, 40);
             this.пToolStripMenuItem.Text = "Справка";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(103, 44);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(103, 40);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 40);
+            this.BtnAddNewTour,
+            this.BtnEditTour,
+            this.BtnRemoveTour});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 48);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1356, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(1356, 50);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // BtnAddNewTour
+            // 
+            this.BtnAddNewTour.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnAddNewTour.Image = global::korobkov_winforms_DGV.Properties.Resources.plus;
+            this.BtnAddNewTour.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnAddNewTour.Name = "BtnAddNewTour";
+            this.BtnAddNewTour.Size = new System.Drawing.Size(46, 44);
+            this.BtnAddNewTour.Text = "toolStripButton1";
+            this.BtnAddNewTour.Click += new System.EventHandler(this.BtnAddNewTour_Click);
+            // 
+            // BtnEditTour
+            // 
+            this.BtnEditTour.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnEditTour.Image = global::korobkov_winforms_DGV.Properties.Resources.edit;
+            this.BtnEditTour.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnEditTour.Name = "BtnEditTour";
+            this.BtnEditTour.Size = new System.Drawing.Size(46, 44);
+            this.BtnEditTour.Text = "toolStripButton2";
+            this.BtnEditTour.Click += new System.EventHandler(this.BtnEditTour_Click);
+            // 
+            // BtnRemoveTour
+            // 
+            this.BtnRemoveTour.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BtnRemoveTour.Image = global::korobkov_winforms_DGV.Properties.Resources.remove;
+            this.BtnRemoveTour.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnRemoveTour.Name = "BtnRemoveTour";
+            this.BtnRemoveTour.Size = new System.Drawing.Size(46, 44);
+            this.BtnRemoveTour.Text = "toolStripButton3";
+            this.BtnRemoveTour.Click += new System.EventHandler(this.BtnRemoveTour_Click);
             // 
             // statusStrip1
             // 
@@ -146,56 +177,34 @@
             this.toolStripStatusTotalSum.Size = new System.Drawing.Size(305, 32);
             this.toolStripStatusTotalSum.Text = "Общая сумма за все туры:";
             // 
-            // dataGridView1
+            // toursDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1356, 572);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(46, 36);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(46, 36);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(46, 44);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.toursDGV.AllowUserToAddRows = false;
+            this.toursDGV.AllowUserToDeleteRows = false;
+            this.toursDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.toursDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toursDGV.Location = new System.Drawing.Point(0, 98);
+            this.toursDGV.Name = "toursDGV";
+            this.toursDGV.ReadOnly = true;
+            this.toursDGV.RowHeadersWidth = 82;
+            this.toursDGV.RowTemplate.Height = 33;
+            this.toursDGV.Size = new System.Drawing.Size(1356, 556);
+            this.toursDGV.TabIndex = 5;
+            this.toursDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.toursDGV_CellFormatting);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1356, 738);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.toursDGV);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главная - Горящие туры";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip2.ResumeLayout(false);
@@ -206,7 +215,7 @@
             this.statusStrip1.PerformLayout();
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toursDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,10 +233,10 @@
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusTotalCount;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusTotalSum;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton BtnAddNewTour;
+        private System.Windows.Forms.ToolStripButton BtnEditTour;
+        private System.Windows.Forms.ToolStripButton BtnRemoveTour;
+        private System.Windows.Forms.DataGridView toursDGV;
     }
 }
 
