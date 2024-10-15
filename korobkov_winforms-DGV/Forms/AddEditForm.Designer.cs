@@ -104,7 +104,7 @@
             this.panel2.Controls.Add(this.btnOk);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 1052);
+            this.panel2.Location = new System.Drawing.Point(0, 866);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(896, 168);
             this.panel2.TabIndex = 2;
@@ -141,6 +141,7 @@
             // 
             // panel3
             // 
+            this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.Honeydew;
             this.panel3.Controls.Add(this.textBoxSumDop);
             this.panel3.Controls.Add(this.numericUpDownSumPerson);
@@ -159,7 +160,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 168);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(896, 884);
+            this.panel3.Size = new System.Drawing.Size(896, 698);
             this.panel3.TabIndex = 3;
             // 
             // textBoxSumDop
@@ -352,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 1220);
+            this.ClientSize = new System.Drawing.Size(896, 1034);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
