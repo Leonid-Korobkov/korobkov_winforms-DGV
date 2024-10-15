@@ -10,6 +10,7 @@ namespace DGV.Tour.Storage
     public class MemoryTourStorage : ITourStorage
     {
         private List<Contracts.Models.Tour> tourList = new List<Contracts.Models.Tour>();
+
         /// <inheritdoc cref="ITourStorage.AddTourAsync(Contracts.Models.Tour)" />
         public Task<Contracts.Models.Tour> AddTourAsync(Contracts.Models.Tour tour)
         {
