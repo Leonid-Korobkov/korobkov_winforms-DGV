@@ -76,6 +76,7 @@ namespace korobkov_winforms_DGV
             numericUpDownSumPerson.AddBinding(t => t.Value, currentTour, s => s.PricePerPerson, errorProvider1);
             numericUpDownCountPeople.AddBinding(t => t.Value, currentTour, s => s.NumberOfPeople, errorProvider1);
             checkBoxWiFi.AddBinding(t => t.Checked, currentTour, s => s.HasWiFi, errorProvider1);
+            textBoxSumDop.AddBinding(t => t.Value, currentTour, s => s.AdditionalFees, errorProvider1);
         }
 
         private void comboBoxDirection_DrawItem(object sender, DrawItemEventArgs e)
