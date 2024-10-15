@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Contracts;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DGV.Contracts.Models;
 
@@ -96,14 +89,15 @@ namespace korobkov_winforms_DGV
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (HasValidationErrors())
+            foreach (Control control in Controls)
             {
-                MessageBox.Show("Некоторые поля заполнены неверно. Проверьте ошибки и попробуйте снова.",
+                if (!string.IsNullOrEmpty(errorProvider1.GetError(control)))
+                {
+                    MessageBox.Show("Некоторые поля заполнены неверно. Проверьте ошибки и попробуйте снова.",
 "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
+                    return;
+                }
+
                 DialogResult = DialogResult.OK;
                 Close();
             }

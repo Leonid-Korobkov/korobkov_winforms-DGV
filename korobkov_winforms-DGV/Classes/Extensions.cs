@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -48,7 +49,9 @@ namespace korobkov_winforms_DGV
                             foreach (var error in results.Where(x => x.MemberNames.Contains(sourceName)))
                             {
                                 errorProvider.SetError(target, error.ErrorMessage);
+                                Debug.WriteLine($"Ошибка в поле {sourceName}: {error.ErrorMessage}");
                             }
+                            e.Cancel = true; // Остановить фокус на этом контроле
                         }
                     };
                 }

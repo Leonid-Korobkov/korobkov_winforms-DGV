@@ -18,7 +18,7 @@ namespace korobkov_winforms_DGV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var storage = new TourStorage();
+            var storage = new MemoryTourStorage();
             var manager = new TourManager(storage);
 
             Application.Run(new MainForm(manager));
