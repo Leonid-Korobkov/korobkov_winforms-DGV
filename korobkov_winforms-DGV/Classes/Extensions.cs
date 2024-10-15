@@ -36,27 +36,29 @@ namespace korobkov_winforms_DGV
             if (errorProvider != null)
             {
                 var sourcePropertyInfo = source.GetType().GetProperty(sourceName);
-                var validators = sourcePropertyInfo.GetCustomAttributes<ValidationAttribute>();
-                if (validators?.Any() == true)
+                if (sourcePropertyInfo != null)
                 {
-                    target.Validating += (s, e) =>
+                    var validators = sourcePropertyInfo.GetCustomAttributes<ValidationAttribute>();
+                    if (validators?.Any() == true)
                     {
-                        var context = new ValidationContext(source);
-                        var results = new List<ValidationResult>();
-                        errorProvider.SetError(target, string.Empty);
-                        if (!Validator.TryValidateObject(source, context, results, validateAllProperties: true))
+                        target.Validating += (s, e) =>
                         {
-                            foreach (var error in results.Where(x => x.MemberNames.Contains(sourceName)))
+                            var context = new ValidationContext(source);
+                            var results = new List<ValidationResult>();
+                            errorProvider.SetError(target, string.Empty);
+                            if (!Validator.TryValidateObject(source, context, results, validateAllProperties: true))
                             {
-                                errorProvider.SetError(target, error.ErrorMessage);
-                                Debug.WriteLine($"Ошибка в поле {sourceName}: {error.ErrorMessage}");
+                                foreach (var error in results.Where(x => x.MemberNames.Contains(sourceName)))
+                                {
+                                    errorProvider.SetError(target, error.ErrorMessage);
+                                    Debug.WriteLine($"Ошибка в поле {sourceName}: {error.ErrorMessage}");
+                                }
+                                e.Cancel = true; // Остановить фокус на этом контроле
                             }
-                            e.Cancel = true; // Остановить фокус на этом контроле
-                        }
-                    };
+                        };
+                    }
                 }
             }
-
         }
 
         /// <summary>

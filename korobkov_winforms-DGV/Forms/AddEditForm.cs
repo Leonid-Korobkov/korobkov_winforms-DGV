@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using DGV.Contracts.Models;
@@ -63,13 +66,20 @@ namespace korobkov_winforms_DGV
             }
 
             // Привязка данных к элементам управления
-            comboBoxDirection.AddBinding(t => t.SelectedItem, currentTour, s => s.Destination, errorProvider1);
-            dateTimePickerDeparture.AddBinding(t => t.Value, currentTour, s => s.DepartureDate, errorProvider1);
-            numericUpDownCountNights.AddBinding(t => t.Value, currentTour, s => s.Nights, errorProvider1);
-            numericUpDownSumPerson.AddBinding(t => t.Value, currentTour, s => s.PricePerPerson, errorProvider1);
-            numericUpDownCountPeople.AddBinding(t => t.Value, currentTour, s => s.NumberOfPeople, errorProvider1);
-            checkBoxWiFi.AddBinding(t => t.Checked, currentTour, s => s.HasWiFi, errorProvider1);
-            textBoxSumDop.AddBinding(t => t.Value, currentTour, s => s.AdditionalFees, errorProvider1);
+            //comboBoxDirection.AddBinding(t => t.SelectedItem, currentTour, s => s.Destination, errorProvider1);
+            //dateTimePickerDeparture.AddBinding(t => t.Value, currentTour, s => s.DepartureDate, errorProvider1);
+            //numericUpDownCountNights.AddBinding(t => t.Value, currentTour, s => s.Nights, errorProvider1);
+            //numericUpDownSumPerson.AddBinding(t => t.Value, currentTour, s => s.PricePerPerson, errorProvider1);
+            //numericUpDownCountPeople.AddBinding(t => t.Value, currentTour, s => s.NumberOfPeople, errorProvider1);
+            //checkBoxWiFi.AddBinding(t => t.Checked, currentTour, s => s.HasWiFi, errorProvider1);
+            //textBoxSumDop.AddBinding(t => t.Value, currentTour, s => s.AdditionalFees, errorProvider1);
+            comboBoxDirection.AddBinding(t => t.SelectedItem, currentTour, s => s.Destination);
+            dateTimePickerDeparture.AddBinding(t => t.Value, currentTour, s => s.DepartureDate);
+            numericUpDownCountNights.AddBinding(t => t.Value, currentTour, s => s.Nights);
+            numericUpDownSumPerson.AddBinding(t => t.Value, currentTour, s => s.PricePerPerson);
+            numericUpDownCountPeople.AddBinding(t => t.Value, currentTour, s => s.NumberOfPeople);
+            checkBoxWiFi.AddBinding(t => t.Checked, currentTour, s => s.HasWiFi);
+            textBoxSumDop.AddBinding(t => t.Value, currentTour, s => s.AdditionalFees);
         }
 
         private void comboBoxDirection_DrawItem(object sender, DrawItemEventArgs e)
@@ -89,31 +99,30 @@ namespace korobkov_winforms_DGV
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            foreach (Control control in Controls)
+            if (HasValidationErrors())
             {
-                if (!string.IsNullOrEmpty(errorProvider1.GetError(control)))
-                {
-                    MessageBox.Show("Некоторые поля заполнены неверно. Проверьте ошибки и попробуйте снова.",
+                MessageBox.Show("Некоторые поля заполнены неверно. Проверьте ошибки и попробуйте снова.",
 "Ошибка валидации", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                DialogResult = DialogResult.OK;
-                Close();
+                return;
             }
+
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private bool HasValidationErrors()
         {
-            // Проверяем все контролы на наличие ошибок
-            foreach (Control control in Controls)
+            var context = new ValidationContext(currentTour);
+            var results = new List<ValidationResult>();
+
+            bool isValid = Validator.TryValidateObject(currentTour, context, results, true);
+
+            foreach (var result in results)
             {
-                if (!string.IsNullOrEmpty(errorProvider1.GetError(control)))
-                {
-                    return true; // Найдена ошибка
-                }
+                Debug.WriteLine($"Ошибка: {result.ErrorMessage}");
             }
-            return false; // Ошибок нет
+
+            return !isValid;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

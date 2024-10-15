@@ -35,7 +35,7 @@ namespace DGV.Tour.Storage
         public Task EditTourAsync(Contracts.Models.Tour tour)
         {
             var target = tourList.FirstOrDefault(x => x.Id == tour.Id);
-            if (tour != null)
+            if (target != null)
             {
                 target.Destination = tour.Destination;
                 target.DepartureDate = tour.DepartureDate;
