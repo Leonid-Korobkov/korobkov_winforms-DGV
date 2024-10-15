@@ -42,7 +42,6 @@
             this.numericUpDownSumPerson = new System.Windows.Forms.NumericUpDown();
             this.checkBoxWiFi = new System.Windows.Forms.CheckBox();
             this.numericUpDownCountPeople = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownCountNights = new System.Windows.Forms.NumericUpDown();
             this.dateTimePickerDeparture = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDirection = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.numericUpDownCountNights = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,8 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textBoxSumDop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSumPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountPeople)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountNights)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountNights)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -111,6 +111,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.CausesValidation = false;
             this.btnCancel.Location = new System.Drawing.Point(292, 61);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(146, 57);
@@ -235,28 +236,6 @@
             0,
             0});
             // 
-            // numericUpDownCountNights
-            // 
-            this.numericUpDownCountNights.Location = new System.Drawing.Point(438, 212);
-            this.numericUpDownCountNights.Maximum = new decimal(new int[] {
-            35,
-            0,
-            0,
-            0});
-            this.numericUpDownCountNights.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownCountNights.Name = "numericUpDownCountNights";
-            this.numericUpDownCountNights.Size = new System.Drawing.Size(382, 31);
-            this.numericUpDownCountNights.TabIndex = 10;
-            this.numericUpDownCountNights.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // dateTimePickerDeparture
             // 
             this.dateTimePickerDeparture.Location = new System.Drawing.Point(438, 131);
@@ -349,6 +328,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // numericUpDownCountNights
+            // 
+            this.numericUpDownCountNights.Location = new System.Drawing.Point(438, 212);
+            this.numericUpDownCountNights.Maximum = new decimal(new int[] {
+            35,
+            0,
+            0,
+            0});
+            this.numericUpDownCountNights.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownCountNights.Name = "numericUpDownCountNights";
+            this.numericUpDownCountNights.Size = new System.Drawing.Size(382, 31);
+            this.numericUpDownCountNights.TabIndex = 10;
+            this.numericUpDownCountNights.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // AddEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -375,8 +376,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textBoxSumDop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSumPerson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountPeople)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountNights)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCountNights)).EndInit();
             this.ResumeLayout(false);
 
         }

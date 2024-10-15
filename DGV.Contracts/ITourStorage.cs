@@ -6,36 +6,35 @@ using DGV.Contracts.Models;
 namespace DGV.Contracts
 {
     /// <summary>
-    /// Определяет интерфейс для управления хранилищем туров.
-    /// Предоставляет методы для выполнения CRUD-операций (создание, чтение, обновление, удаление).
+    /// Управление хранилищем туров с выполнением CRUD-операций:  
+    /// создание, чтение, обновление и удаление.
     /// </summary>
     public interface ITourStorage
     {
-
         /// <summary>
-        /// Асинхронно возвращает список всех доступных туров.
+        /// Получение списка <see cref="Tour"/> в виде неизменяемой коллекции.
         /// </summary>
-        /// <returns>Набор туров в виде неизменяемой коллекции <see cref="IReadOnlyCollection{Tour}"/>.</returns>
+        /// <returns><see cref="IReadOnlyCollection{Tour}"/> со всеми доступными турами.</returns>
         Task<IReadOnlyCollection<Tour>> GetAllToursAsync();
 
         /// <summary>
-        /// Асинхронно добавляет новый тур в коллекцию.
+        /// Добавление нового <see cref="Tour"/> в хранилище.
         /// </summary>
-        /// <param name="tour">Экземпляр тура, который необходимо добавить.</param>
-        /// <returns>Добавленный тур с уникальным идентификатором.</returns>
+        /// <param name="tour">Добавляемый экземпляр <see cref="Tour"/>.</param>
+        /// <returns>Добавленный <see cref="Tour"/> с уникальным идентификатором.</returns>
         Task<Tour> AddTourAsync(Tour tour);
 
         /// <summary>
-        /// Асинхронно обновляет данные существующего тура.
+        /// Обновление данных существующего <see cref="Tour"/>.
         /// </summary>
-        /// <param name="tour">Экземпляр тура с измененными данными.</param>
+        /// <param name="tour">Экземпляр <see cref="Tour"/> с измененными данными.</param>
         Task EditTourAsync(Tour tour);
 
         /// <summary>
-        /// Асинхронно удаляет тур по его уникальному идентификатору.
+        /// Удаление <see cref="Tour"/> по идентификатору.
         /// </summary>
-        /// <param name="id">Уникальный идентификатор тура, который необходимо удалить.</param>
-        /// <returns>Значение <see cref="bool"/>, указывающее, был ли тур успешно удален.</returns>
+        /// <param name="id">Уникальный идентификатор удаляемого <see cref="Tour"/>.</param>
+        /// <returns><see cref="bool"/>, указывающий на успешное удаление.</returns>
         Task<bool> DeleteTourAsync(Guid id);
     }
 }

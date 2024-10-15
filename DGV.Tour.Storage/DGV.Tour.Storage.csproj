@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TourStorage.cs" />
+    <Compile Include="MemoryTourStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DGV.Contracts\DGV.Contracts.csproj">
