@@ -2,31 +2,19 @@
 
 namespace DGV.Tour.Manager.Models
 {
-    /// <summary>
-    /// Класс, представляющий статистику туров, 
-    /// включая общее количество, суммы и дополнительные сборы.
-    /// </summary>
+    /// <inheritdoc cref="ITourStats"/>
     public class TourStats : ITourStats
     {
-        /// <summary>
-        /// Общее количество туров.
-        /// </summary>
+        /// <inheritdoc cref="ITourStats.TotalCountTours"/>
         public int TotalCountTours { get; set; }
 
-        /// <summary>
-        /// Общая сумма стоимости всех туров.
-        /// Рассчитывается как сумма произведений стоимости на человека и количества человек для каждого тура.
-        /// </summary>
+        /// <inheritdoc cref="ITourStats.TotalSumTours"/>
         public decimal TotalSumTours { get; set; }
 
-        /// <summary>
-        /// Количество туров с дополнительными сборами.
-        /// </summary>
+        /// <inheritdoc cref="ITourStats.CountToursWithDop"/>
         public int CountToursWithDop { get; set; }
 
-        /// <summary>
-        /// Общая сумма дополнительных сборов по всем турам.
-        /// </summary>
+        /// <inheritdoc cref="ITourStats.TotalSumDop"/>
         public decimal TotalSumDop { get; set; }
     }
 }

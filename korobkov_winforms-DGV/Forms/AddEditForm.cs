@@ -66,16 +66,9 @@ namespace korobkov_winforms_DGV
             }
 
             // Привязка данных к элементам управления
-            //comboBoxDirection.AddBinding(t => t.SelectedItem, currentTour, s => s.Destination, errorProvider1);
-            //dateTimePickerDeparture.AddBinding(t => t.Value, currentTour, s => s.DepartureDate, errorProvider1);
-            //numericUpDownCountNights.AddBinding(t => t.Value, currentTour, s => s.Nights, errorProvider1);
-            //numericUpDownSumPerson.AddBinding(t => t.Value, currentTour, s => s.PricePerPerson, errorProvider1);
-            //numericUpDownCountPeople.AddBinding(t => t.Value, currentTour, s => s.NumberOfPeople, errorProvider1);
-            //checkBoxWiFi.AddBinding(t => t.Checked, currentTour, s => s.HasWiFi, errorProvider1);
-            //textBoxSumDop.AddBinding(t => t.Value, currentTour, s => s.AdditionalFees, errorProvider1);
             comboBoxDirection.AddBinding(t => t.SelectedItem, currentTour, s => s.Destination);
             dateTimePickerDeparture.AddBinding(t => t.Value, currentTour, s => s.DepartureDate);
-            numericUpDownCountNights.AddBinding(t => t.Value, currentTour, s => s.Nights);
+            numericUpDownCountNights.AddBinding(t => t.Value, currentTour, s => s.Nights, errorProvider1);
             numericUpDownSumPerson.AddBinding(t => t.Value, currentTour, s => s.PricePerPerson);
             numericUpDownCountPeople.AddBinding(t => t.Value, currentTour, s => s.NumberOfPeople);
             checkBoxWiFi.AddBinding(t => t.Checked, currentTour, s => s.HasWiFi);

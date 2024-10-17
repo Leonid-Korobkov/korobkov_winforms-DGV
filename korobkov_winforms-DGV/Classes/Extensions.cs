@@ -53,7 +53,7 @@ namespace korobkov_winforms_DGV
                                     errorProvider.SetError(target, error.ErrorMessage);
                                     Debug.WriteLine($"Ошибка в поле {sourceName}: {error.ErrorMessage}");
                                 }
-                                e.Cancel = true; // Остановить фокус на этом контроле
+                                //e.Cancel = true; // Остановить фокус на этом контроле
                             }
                         };
                     }
