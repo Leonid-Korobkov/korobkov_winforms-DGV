@@ -36,6 +36,12 @@
     <ApplicationIcon>Resources\world_travel_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DGV.Standart.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\krbln.Korobkov-Leonid.DGV.Standart.Storage.1.0.0\lib\netstandard2.0\DGV.Standart.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="DGV.Standart.Storage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\krbln.Korobkov-Leonid.DGV.Standart.Storage.1.0.0\lib\netstandard2.0\DGV.Standart.Storage.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -83,6 +89,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include=".editorconfig" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,17 +119,9 @@
     <None Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DGV.Standart.Contracts\DGV.Standart.Contracts.csproj">
-      <Project>{7308e417-dd7b-488f-ab37-c0485cb116cb}</Project>
-      <Name>DGV.Standart.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DGV.Standart.Manager\DGV.Standart.Manager.csproj">
       <Project>{96a14501-937d-45da-ad45-c50c00408f30}</Project>
       <Name>DGV.Standart.Manager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DGV.Standart.Storage\DGV.Standart.Storage.csproj">
-      <Project>{eaa8b8fb-3b1e-43f3-b809-45cd035da519}</Project>
-      <Name>DGV.Standart.Storage</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
