@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DGV.Contracts.Models;
-using DGV.Tour.Manager;
+using DGV.Standart.Contracts.Models;
+using DGV.Standart.Manager;
 
 namespace korobkov_winforms_DGV
 {

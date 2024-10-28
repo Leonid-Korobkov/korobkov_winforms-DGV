@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-using DGV.Contracts.Models;
+using DGV.Standart.Contracts.Models;
 
 namespace korobkov_winforms_DGV
 {

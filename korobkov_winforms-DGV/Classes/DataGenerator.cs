@@ -1,5 +1,5 @@
 ﻿using System;
-using DGV.Contracts.Models;
+using DGV.Standart.Contracts.Models;
 
 namespace korobkov_winforms_DGV
 {

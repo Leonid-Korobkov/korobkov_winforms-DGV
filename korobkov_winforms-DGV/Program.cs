@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DGV.Tour.Manager;
-using DGV.Tour.Storage;
+using DGV.Standart.Manager;
+using DGV.Standart.Storage;
 
 namespace korobkov_winforms_DGV
 {

@@ -112,17 +112,17 @@
     <None Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DGV.Contracts\DGV.Contracts.csproj">
-      <Project>{9260E278-D393-4CB7-A1E1-46F35BB86374}</Project>
-      <Name>DGV.Contracts</Name>
+    <ProjectReference Include="..\DGV.Standart.Contracts\DGV.Standart.Contracts.csproj">
+      <Project>{7308e417-dd7b-488f-ab37-c0485cb116cb}</Project>
+      <Name>DGV.Standart.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DGV.Tour.Manager\DGV.Tour.Manager.csproj">
-      <Project>{C43922D8-ABAD-4E44-9B9F-CBC36EA11CB5}</Project>
-      <Name>DGV.Tour.Manager</Name>
+    <ProjectReference Include="..\DGV.Standart.Manager\DGV.Standart.Manager.csproj">
+      <Project>{96a14501-937d-45da-ad45-c50c00408f30}</Project>
+      <Name>DGV.Standart.Manager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DGV.Tour.Storage\DGV.Tour.Storage.csproj">
-      <Project>{74E59072-811C-490C-8BBB-D6B43D655FB5}</Project>
-      <Name>DGV.Tour.Storage</Name>
+    <ProjectReference Include="..\DGV.Standart.Storage\DGV.Standart.Storage.csproj">
+      <Project>{eaa8b8fb-3b1e-43f3-b809-45cd035da519}</Project>
+      <Name>DGV.Standart.Storage</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
