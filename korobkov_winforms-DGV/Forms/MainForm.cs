@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DGV.Contracts.Models;
-using DGV.Tour.Manager;
+using DGV.Standart.Contracts.Models;
+using DGV.Standart.Manager;
+using korobkov_winforms_DGV.Classes;
 
 namespace korobkov_winforms_DGV
 {
@@ -41,7 +42,7 @@ namespace korobkov_winforms_DGV
             var addForm = new AddEditForm();
             if (addForm.ShowDialog() == DialogResult.OK)
             {
-                await tourManager.AddTourAsync(addForm.EditableTour);
+                await tourManager.AddTourAsync(ChangeTypeTour.TourValidation(addForm.EditableTour));
                 bindingSource.ResetBindings(false);
                 await SetStats();
             }
@@ -52,10 +53,10 @@ namespace korobkov_winforms_DGV
             if (toursDGV.SelectedRows.Count > 0)
             {
                 var data = (Tour)toursDGV.Rows[toursDGV.SelectedRows[0].Index].DataBoundItem;
-                var editForm = new AddEditForm(data);
+                var editForm = new AddEditForm(ChangeTypeTour.TourValidation(data));
                 if (editForm.ShowDialog() == DialogResult.OK)
                 {
-                    await tourManager.EditTourAsync(editForm.EditableTour);
+                    await tourManager.EditTourAsync(ChangeTypeTour.TourValidation(editForm.EditableTour));
                     bindingSource.ResetBindings(false);
                     await SetStats();
                 }

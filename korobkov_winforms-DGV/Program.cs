@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DGV.Tour.Manager;
-using DGV.Tour.Storage;
+using DGV.Standart.Manager;
+using DGV.Standart.Storage;
+using Microsoft.Extensions.Logging;
 
 namespace korobkov_winforms_DGV
 {
@@ -16,10 +17,13 @@ namespace korobkov_winforms_DGV
         [STAThread]
         static void Main()
         {
+            var factory = LoggerFactory.Create(buelder => buelder.AddDebug());
+            var logger = factory.CreateLogger(nameof(DataGrid));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var storage = new MemoryTourStorage();
-            var manager = new TourManager(storage);
+            var manager = new TourManager(storage, logger);
 
             Application.Run(new MainForm(manager));
         }

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DGV.Contracts.Models
+namespace DGV.Standart.Contracts.Models
 {
     /// <summary>
     /// Направления для туров

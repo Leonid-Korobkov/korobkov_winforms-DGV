@@ -1,5 +1,6 @@
 ﻿using System;
-using DGV.Contracts.Models;
+using DGV.Standart.Contracts.Models;
+using korobkov_winforms_DGV.Models;
 
 namespace korobkov_winforms_DGV
 {
@@ -8,10 +9,10 @@ namespace korobkov_winforms_DGV
     /// </summary>
     public static class DataGenerator
     {
-        public static Tour CreateTour(Action<Tour> customizeTour = null)
+        public static ValidateTour CreateTour(Action<ValidateTour> customizeTour = null)
         {
             // Создаем тур с заранее заданными значениями
-            var newTour = new Tour
+            var newTour = new ValidateTour
             {
                 Id = Guid.NewGuid(),
                 Destination = Destination.Turkey,

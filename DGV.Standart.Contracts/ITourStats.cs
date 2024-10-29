@@ -1,4 +1,4 @@
-﻿namespace DGV.Contracts
+﻿namespace DGV.Standart.Contracts
 {
     /// <summary>
     /// Интерфейс, определяющий статистические данные по турам.

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DGV.Contracts;
+using DGV.Standart.Contracts;
 
-namespace DGV.Tour.Storage
+namespace DGV.Standart.Storage
 {
     /// <inheritdoc cref="ITourStorage" />
     public class MemoryTourStorage : ITourStorage

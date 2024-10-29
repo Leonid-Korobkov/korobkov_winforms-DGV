@@ -1,6 +1,6 @@
-﻿using DGV.Contracts;
+﻿using DGV.Standart.Contracts;
 
-namespace DGV.Tour.Manager.Models
+namespace DGV.Standart.Manager.Models
 {
     /// <inheritdoc cref="ITourStats"/>
     public class TourStats : ITourStats
