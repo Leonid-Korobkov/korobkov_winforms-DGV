@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-//using System.ComponentModel.DataAnnotations;
 
 namespace DGV.Standart.Contracts.Models
 {
@@ -17,7 +16,6 @@ namespace DGV.Standart.Contracts.Models
         /// <summary>
         /// Направление тура (точка назначения)
         /// </summary>
-        //[Required]
         [DisplayName("Назначение")]
         public Destination Destination { get; set; }
 
@@ -31,7 +29,6 @@ namespace DGV.Standart.Contracts.Models
         /// Количество ночей
         /// </summary>
         [DisplayName("Кол-во ночей")]
-        // [Range(1, 31)]
         public int Nights { get; set; }
 
         /// <summary>
@@ -44,7 +41,6 @@ namespace DGV.Standart.Contracts.Models
         /// Количество отдыхающих
         /// </summary>
         [DisplayName("Кол-во отдыхающих")]
-        //[Range(1, 10)]
         public int NumberOfPeople { get; set; }
 
         /// <summary>
@@ -58,11 +54,6 @@ namespace DGV.Standart.Contracts.Models
         /// </summary>
         [DisplayName("Доплаты")]
         public decimal AdditionalFees { get; set; }
-
-        /// <summary>
-        /// Общая стоимость тура
-        /// </summary>
-        // public decimal TotalCost => (PricePerPerson * NumberOfPeople) + AdditionalFees;
 
         /// <summary>
         /// Создать новый тур
