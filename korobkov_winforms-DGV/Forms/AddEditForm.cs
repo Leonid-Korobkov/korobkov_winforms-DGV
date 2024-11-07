@@ -5,21 +5,22 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using DGV.Standart.Contracts.Models;
+using korobkov_winforms_DGV.Models;
 
 namespace korobkov_winforms_DGV
 {
     public partial class AddEditForm : Form
     {
         private bool isEditMode;
-        private Tour currentTour;
+        private ValidateTour currentTour;
 
-        public AddEditForm(Tour currentTour = null)
+        public AddEditForm(ValidateTour currentTour = null)
         {
             InitializeComponent();
 
             if (currentTour != null)
             {
-                this.currentTour = new Tour
+                this.currentTour = new ValidateTour
                 {
                     Id = currentTour.Id,
                     AdditionalFees = currentTour.AdditionalFees,
@@ -38,7 +39,7 @@ namespace korobkov_winforms_DGV
             }
         }
 
-        public Tour EditableTour { get => currentTour; set => currentTour = value; }
+        public ValidateTour EditableTour { get => currentTour; set => currentTour = value; }
 
         private void AddEditForm_Load(object sender, EventArgs e)
         {
