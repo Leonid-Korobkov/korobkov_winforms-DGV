@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using DGV.Standart.Contracts.Models;
 using DGV.Standart.Manager;
 using korobkov_winforms_DGV.Classes;
+using korobkov_winforms_DGV.Models;
 
 namespace korobkov_winforms_DGV
 {
