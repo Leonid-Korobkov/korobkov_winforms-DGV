@@ -153,6 +153,10 @@
       <Project>{96a14501-937d-45da-ad45-c50c00408f30}</Project>
       <Name>DGV.Standart.Manager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\korobkov_winforms-DGV\korobkov_winforms-DGV.csproj">
+      <Project>{165961D1-9830-43F8-9F5A-8D8E455D4E77}</Project>
+      <Name>korobkov_winforms-DGV</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />

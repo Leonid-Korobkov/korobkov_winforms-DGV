@@ -88,18 +88,32 @@ namespace DGV.Standart.Manager
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             List<Contracts.Models.Tour> result = null;
+
             try
             {
                 result = (List<Tour>)await tourStorage.GetAllToursAsync();
-                logger.LogInformation(StopwatchTemplate, nameof(ITourManager.DeleteTourAsync), result, stopWatch.ElapsedMilliseconds, result);
+                logger.LogInformation(
+                    StopwatchTemplate,
+                    nameof(ITourManager.GetAllToursAsync),
+                    result,
+                    stopWatch.ElapsedMilliseconds,
+                    result);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(StopwatchNon, nameof(ITourManager.DeleteTourAsync), result);
+                logger.LogInformation(
+                    StopwatchNon,
+                    nameof(ITourManager.GetAllToursAsync),
+                    result);
             }
-            stopWatch.Stop();
+            finally
+            {
+                stopWatch.Stop();
+            }
+
             return result;
         }
+
 
         /// <inheritdoc cref="ITourManager.GetStatsAsync()" />
         public async Task<ITourStats> GetStatsAsync()

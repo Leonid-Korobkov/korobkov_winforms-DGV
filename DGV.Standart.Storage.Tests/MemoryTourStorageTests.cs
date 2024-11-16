@@ -30,7 +30,7 @@ namespace DGV.Standart.Storage.Tests
         public async Task AddShouldReturnValue()
         {
             // Arrange
-            var model = DataGenerator.CreateTour();
+            var model = ChangeTypeTour.TourValidation(DataGenerator.CreateTour());
 
             // Act
             var result = await tourStorage.AddTourAsync(model);
