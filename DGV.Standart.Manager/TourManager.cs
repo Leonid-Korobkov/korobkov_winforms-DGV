@@ -37,10 +37,11 @@ namespace DGV.Standart.Manager
             {
                 result = await tourStorage.AddTourAsync(tour);
                 logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITourManager.AddTourAsync), tour.Id, stopWatch.ElapsedMilliseconds));
+                // logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITourManager.AddTourAsync), tour.Id, stopWatch.ElapsedMilliseconds));
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon, nameof(ITourManager.AddTourAsync), tour.Id));
+                logger.LogInformation(string.Format(StopwatchNon + ex.Message, nameof(ITourManager.AddTourAsync), tour.Id));
             }
             stopWatch.Stop();
             return result;
