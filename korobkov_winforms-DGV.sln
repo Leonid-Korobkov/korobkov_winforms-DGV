@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DGV.Standart.Contracts", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DGV.Standart.Storage", "DGV.Standart.Storage\DGV.Standart.Storage.csproj", "{18B82274-00F3-4258-B502-EAC7802A8451}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Standart.Manager.Tests", "DGV.Standart.Manager.Tests\DGV.Standart.Manager.Tests.csproj", "{318E7A8F-61B7-4D58-850B-FB0A7EE47792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Standart.Storage.Tests", "DGV.Standart.Storage.Tests\DGV.Standart.Storage.Tests.csproj", "{811B1514-8ACE-4DAB-BA0E-6F018115D575}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{18B82274-00F3-4258-B502-EAC7802A8451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18B82274-00F3-4258-B502-EAC7802A8451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18B82274-00F3-4258-B502-EAC7802A8451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318E7A8F-61B7-4D58-850B-FB0A7EE47792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318E7A8F-61B7-4D58-850B-FB0A7EE47792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318E7A8F-61B7-4D58-850B-FB0A7EE47792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318E7A8F-61B7-4D58-850B-FB0A7EE47792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811B1514-8ACE-4DAB-BA0E-6F018115D575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811B1514-8ACE-4DAB-BA0E-6F018115D575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811B1514-8ACE-4DAB-BA0E-6F018115D575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811B1514-8ACE-4DAB-BA0E-6F018115D575}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
