@@ -18,7 +18,7 @@ namespace DGV.Standart.Manager
         private ITourStorage tourStorage;
 
         private readonly ILogger logger;
-        private const string StopwatchTemplate = "Операция {0} c id {1} выполнялась {2} мс";
+        private const string StopwatchTemplate = "Операция {0} c id {1} выполнялась {2} мс. Результат {@tour}";
         private const string StopwatchNon = "Операция {0} c id {1}  НЕ выполнилась";
 
         public TourManager(ITourStorage tourStorage, ILogger logger)
@@ -36,12 +36,11 @@ namespace DGV.Standart.Manager
             try
             {
                 result = await tourStorage.AddTourAsync(tour);
-                logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITourManager.AddTourAsync), tour.Id, stopWatch.ElapsedMilliseconds));
-                // logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITourManager.AddTourAsync), tour.Id, stopWatch.ElapsedMilliseconds));
+                logger.LogInformation(StopwatchTemplate, nameof(ITourManager.AddTourAsync), tour.Id, stopWatch.ElapsedMilliseconds, result);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon + ex.Message, nameof(ITourManager.AddTourAsync), tour.Id));
+                logger.LogInformation(StopwatchNon + ex.Message, nameof(ITourManager.AddTourAsync), tour.Id);
             }
             stopWatch.Stop();
             return result;
@@ -56,11 +55,11 @@ namespace DGV.Standart.Manager
             try
             {
                 result = await tourStorage.DeleteTourAsync(id);
-                logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITourManager.DeleteTourAsync), id, stopWatch.ElapsedMilliseconds));
+                logger.LogInformation(StopwatchTemplate, nameof(ITourManager.DeleteTourAsync), id, stopWatch.ElapsedMilliseconds, result);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon, nameof(ITourManager.DeleteTourAsync), id));
+                logger.LogInformation(StopwatchNon, nameof(ITourManager.DeleteTourAsync), id);
             }
             stopWatch.Stop();
             return result;
@@ -74,11 +73,11 @@ namespace DGV.Standart.Manager
             try
             {
                 await tourStorage.EditTourAsync(tour);
-                logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITourManager.EditTourAsync), tour.Id, stopWatch.ElapsedMilliseconds));
+                logger.LogInformation(StopwatchTemplate, nameof(ITourManager.EditTourAsync), tour.Id, stopWatch.ElapsedMilliseconds, tour);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon, nameof(ITourManager.AddTourAsync), tour.Id));
+                logger.LogInformation(StopwatchNon, nameof(ITourManager.AddTourAsync), tour.Id);
             }
             stopWatch.Stop();
         }
@@ -92,11 +91,11 @@ namespace DGV.Standart.Manager
             try
             {
                 result = (List<Tour>)await tourStorage.GetAllToursAsync();
-                logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITourManager.DeleteTourAsync), result, stopWatch.ElapsedMilliseconds));
+                logger.LogInformation(StopwatchTemplate, nameof(ITourManager.DeleteTourAsync), result, stopWatch.ElapsedMilliseconds, result);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon, nameof(ITourManager.DeleteTourAsync), result));
+                logger.LogInformation(StopwatchNon, nameof(ITourManager.DeleteTourAsync), result);
             }
             stopWatch.Stop();
             return result;
