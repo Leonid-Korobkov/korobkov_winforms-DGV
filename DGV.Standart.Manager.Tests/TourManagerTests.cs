@@ -163,7 +163,7 @@ namespace DGV.Standart.Manager.Tests
         }
 
         /// <summary>
-        /// Тест: Метод <see cref="ApplicantManager.GetAllAsync"/>
+        /// Получение 2 туров
         /// </summary>
         [Fact]
         public async Task GetAllShouldWorkWith2Tours()
@@ -190,7 +190,7 @@ namespace DGV.Standart.Manager.Tests
         }
 
         /// <summary>
-        /// Тест: Метод <see cref="ApplicantManager.GetStatsAsync"/>
+        /// Получение статистики
         /// </summary>
         [Fact]
         public async Task GetStatsShouldWork()
