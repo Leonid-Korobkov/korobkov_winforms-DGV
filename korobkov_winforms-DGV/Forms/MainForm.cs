@@ -44,6 +44,7 @@ namespace korobkov_winforms_DGV
             if (addForm.ShowDialog() == DialogResult.OK)
             {
                 await tourManager.AddTourAsync(ChangeTypeTour.TourValidation(addForm.EditableTour));
+                bindingSource.DataSource = await tourManager.GetAllToursAsync();
                 bindingSource.ResetBindings(false);
                 await SetStats();
             }
@@ -58,6 +59,7 @@ namespace korobkov_winforms_DGV
                 if (editForm.ShowDialog() == DialogResult.OK)
                 {
                     await tourManager.EditTourAsync(ChangeTypeTour.TourValidation(editForm.EditableTour));
+                    bindingSource.DataSource = await tourManager.GetAllToursAsync();
                     bindingSource.ResetBindings(false);
                     await SetStats();
                 }
@@ -72,6 +74,7 @@ namespace korobkov_winforms_DGV
                 if (MessageBox.Show($"Удалить {data.Destination} запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
                     await tourManager.DeleteTourAsync(data.Id);
+                    bindingSource.DataSource = await tourManager.GetAllToursAsync();
                     bindingSource.ResetBindings(false);
                     await SetStats();
                 };
