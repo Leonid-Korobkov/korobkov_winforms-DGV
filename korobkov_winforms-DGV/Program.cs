@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DGV.Standart.Manager;
-using DGV.Standart.Storage;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Extensions.Logging;
+using DGV.Storage.Database;
 
 namespace korobkov_winforms_DGV
 {
@@ -35,7 +31,8 @@ namespace korobkov_winforms_DGV
             /*var factory = LoggerFactory.Create(buelder => buelder.AddDebug());
             var logger = factory.CreateLogger(nameof(DataGrid));*/
 
-            var storage = new MemoryTourStorage();
+            //var storage = new MemoryTourStorage();
+            var storage = new DBTour();
             var manager = new TourManager(storage, logger);
 
             Application.Run(new MainForm(manager));

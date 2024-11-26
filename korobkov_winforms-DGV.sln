@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Standart.Manager.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Standart.Storage.Tests", "DGV.Standart.Storage.Tests\DGV.Standart.Storage.Tests.csproj", "{811B1514-8ACE-4DAB-BA0E-6F018115D575}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Storage.Database", "DGV.Storage.Database\DGV.Storage.Database.csproj", "{013395C4-B930-49EA-8A09-12043D6BA381}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{811B1514-8ACE-4DAB-BA0E-6F018115D575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{811B1514-8ACE-4DAB-BA0E-6F018115D575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{811B1514-8ACE-4DAB-BA0E-6F018115D575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013395C4-B930-49EA-8A09-12043D6BA381}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013395C4-B930-49EA-8A09-12043D6BA381}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013395C4-B930-49EA-8A09-12043D6BA381}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013395C4-B930-49EA-8A09-12043D6BA381}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
