@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Standart.Storage.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DGV.Storage.Database", "DGV.Storage.Database\DGV.Storage.Database.csproj", "{013395C4-B930-49EA-8A09-12043D6BA381}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tours.WebApp", "Tours.WebApp\Tours.WebApp.csproj", "{27B35DFB-9F82-46DC-AF33-5239552FE077}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{013395C4-B930-49EA-8A09-12043D6BA381}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013395C4-B930-49EA-8A09-12043D6BA381}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013395C4-B930-49EA-8A09-12043D6BA381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B35DFB-9F82-46DC-AF33-5239552FE077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B35DFB-9F82-46DC-AF33-5239552FE077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B35DFB-9F82-46DC-AF33-5239552FE077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B35DFB-9F82-46DC-AF33-5239552FE077}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
