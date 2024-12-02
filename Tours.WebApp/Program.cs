@@ -3,6 +3,8 @@ using DGV.Storage.Database;
 using Serilog.Extensions.Logging;
 using Serilog;
 using DGV.Standart.Contracts;
+using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,9 @@ builder.Services.AddSingleton<Microsoft.Extensions.Logging.ILogger>(sp => sp.Get
 // Регистрация хранилища и менеджера
 builder.Services.AddSingleton<ITourStorage, DBTour>();
 builder.Services.AddTransient<TourManager>();
+var connectionString = builder.Configuration.GetConnectionString("DBConnection");
+Console.WriteLine(connectionString);
+
 
 
 // Add services to the container.
