@@ -26,7 +26,7 @@ namespace Tours.WebApp.Controllers
             await Task.WhenAll(tours, statistics);
 
             ViewData[nameof(ITourStats)] = statistics.Result;
-            return View();
+            return View(tours.Result);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Tours.WebApp.Controllers
         /// Обрабатывает редактирование текущего тура
         /// </summary>
         /// POST: TourController/Edit
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> Edit(Guid id, Tour tour)
         {
             if (!ModelState.IsValid)
@@ -99,7 +99,7 @@ namespace Tours.WebApp.Controllers
         /// Обрабатывает удаление тура по его идентификатору
         /// </summary>
         /// DELETE: TourController/Delete
-        [HttpDelete]
+        [HttpPost]
         public async Task<IActionResult> Delete(Guid id)
         {
             var result = await tourManager.DeleteTourAsync(id);

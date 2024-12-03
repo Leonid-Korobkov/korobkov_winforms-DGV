@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace DGV.Standart.Contracts.Models
 {
@@ -17,7 +18,8 @@ namespace DGV.Standart.Contracts.Models
         /// Направление тура (точка назначения)
         /// </summary>
         [DisplayName("Назначение")]
-        public Destination Destination { get; set; }
+        [Required(ErrorMessage = "Обязательное поле")]
+        public string Destination { get; set; }
 
         /// <summary>
         /// Дата вылета
@@ -29,18 +31,24 @@ namespace DGV.Standart.Contracts.Models
         /// Количество ночей
         /// </summary>
         [DisplayName("Кол-во ночей")]
+        [Range(0d, 30,
+            ErrorMessage = "Число должно быть больше 0 и меньше 30")]
         public int Nights { get; set; }
 
         /// <summary>
         /// Стоимость за одного отдыхающего
         /// </summary>
         [DisplayName("Цена за человека")]
+        [Range(0d, double.MaxValue,
+            ErrorMessage = "Число должно быть больше 0")]
         public decimal PricePerPerson { get; set; }
 
         /// <summary>
         /// Количество отдыхающих
         /// </summary>
         [DisplayName("Кол-во отдыхающих")]
+        [Range(0, int.MaxValue,
+            ErrorMessage = "Число должно быть больше 0")]
         public int NumberOfPeople { get; set; }
 
         /// <summary>
@@ -53,6 +61,8 @@ namespace DGV.Standart.Contracts.Models
         /// Доплаты
         /// </summary>
         [DisplayName("Доплаты")]
+        [Range(0, 50000, ErrorMessage = "Стоимость должна быть от 100 до 50000 рублей")]
+        [DefaultValue(0)]
         public decimal AdditionalFees { get; set; }
 
         /// <summary>

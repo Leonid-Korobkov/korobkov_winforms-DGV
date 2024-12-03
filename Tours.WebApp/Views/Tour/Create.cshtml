@@ -1,0 +1,78 @@
+﻿@using DGV.Standart.Contracts
+@using DGV.Standart.Contracts.Models
+@model Tour
+@{
+    ViewData["Title"] = "Создать новый тур";
+}
+
+<h2>Создать новый товар</h2>
+
+<form asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label asp-for="Destination" class="control-label">Назначение</label>
+                <select asp-for="Destination" class="form-control" asp-items="@(EnumHelper.GetEnumDescriptions(typeof(Destination)))"></select>
+                <span asp-validation-for="Destination" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label asp-for="DepartureDate" class="control-label">Дата вылета</label>
+                <input asp-for="DepartureDate" class="form-control" type="date" />
+                <span asp-validation-for="DepartureDate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label asp-for="Nights" class="control-label">Количество ночей</label>
+                <input asp-for="Nights" class="form-control" />
+                <span asp-validation-for="Nights" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label asp-for="PricePerPerson" class="control-label">Цена за одного человека</label>
+                <input asp-for="PricePerPerson" class="form-control" type="number" step="any" />
+                <span asp-validation-for="PricePerPerson" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label asp-for="NumberOfPeople" class="control-label">Количество отдыхающих</label>
+                <input asp-for="NumberOfPeople" class="form-control" />
+                <span asp-validation-for="NumberOfPeople" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HasWiFi" /> @Html.DisplayNameFor(model => model.HasWiFi)
+                </label>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="form-group">
+                <label asp-for="AdditionalFees" class="control-label">Дополнительные услуги</label>
+                <input asp-for="AdditionalFees" value="0" class="form-control" type="number" step="any" />
+                <span asp-validation-for="AdditionalFees" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <button type="submit" class="btn btn-primary">Сохранить тур</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

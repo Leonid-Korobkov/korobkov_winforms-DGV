@@ -28,7 +28,6 @@ var connectionString = builder.Configuration.GetConnectionString("DBConnection")
 Console.WriteLine(connectionString);
 
 
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

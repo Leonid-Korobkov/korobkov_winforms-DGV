@@ -13,7 +13,7 @@
     <a asp-action="Create" class="btn btn-success">Добавить новый тур</a>
 </p>
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Назначение</th>
@@ -21,7 +21,7 @@
             <th>Количество ночей</th>
             <th>Цена за одного человека</th>
             <th>Количество отдыхающих</th>
-            <th>Естль ли WI-FI</th>
+            <th>Есть ли WI-FI</th>
             <th>Дополнительные услуги</th>
             <th>Общая стоимость</th>
             <th>Действия</th>
@@ -36,18 +36,17 @@
                 <td>@tour.Nights</td>
                 <td>@tour.PricePerPerson</td>
                 <td>@tour.NumberOfPeople</td>
-                <td>@tour.HasWiFi</td>
+                <td>@(tour.HasWiFi ? "Да" : "Нет")</td>
                 <td>@tour.AdditionalFees</td>
                 <td>@(tour.PricePerPerson * tour.NumberOfPeople + tour.AdditionalFees)</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@tour.Id" class="btn btn-warning"
-                       onclick="return confirm('Вы уверены, что хотите изменить этот продукт?');">
-                        Изменить
-                    </a>
-
                     <form asp-action="Delete" asp-route-id="@tour.Id" method="post" style="display:inline;">
+                        <a asp-action="Edit" asp-route-id="@tour.Id" class="btn btn-warning mb-1"
+                       onclick="return confirm('Вы уверены, что хотите изменить этот тур?');">
+                            Изменить
+                        </a>
                         <button type="submit" class="btn btn-danger"
-                                onclick="return confirm('Вы уверены, что хотите удалить этот продукт?');">
+                            onclick="return confirm('Вы уверены, что хотите удалить этот тур?');">
                             Удалить
                         </button>
                     </form>
@@ -56,6 +55,7 @@
         }
     </tbody>
 </table>
+
 
 <div class="row bg-light p-2">
     <div class="col d-flex justify-content-between">
