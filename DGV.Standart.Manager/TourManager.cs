@@ -122,7 +122,7 @@ namespace DGV.Standart.Manager
             return new TourStats
             {
                 TotalCountTours = result.Count,
-                TotalSumTours = result.Sum(t => t.PricePerPerson * t.NumberOfPeople),
+                TotalSumTours = result.Sum(t => t.PricePerPerson * t.NumberOfPeople + t.AdditionalFees),
                 CountToursWithDop = result.Count(t => t.AdditionalFees > 0),
                 TotalSumDop = result.Sum(t => t.AdditionalFees)
             };

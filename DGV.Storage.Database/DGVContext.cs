@@ -11,7 +11,7 @@ namespace DGV.Storage.Database
         /// <summary>
         /// Конструктор контекста базы данных
         /// </summary>
-        public DGVContext() : base("DataGridConnectionString")
+        public DGVContext() : base("TestDB")
         {
         }
 

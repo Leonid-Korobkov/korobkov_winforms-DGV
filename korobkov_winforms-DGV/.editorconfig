@@ -84,7 +84,9 @@ trim_trailing_whitespace = true
 
 # Xml project files
 [*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
-indent_size = 2
+indent_size = 4
+dotnet_style_operator_placement_when_wrapping = beginning_of_line
+tab_width = 4
 
 # Xml config files
 [*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
@@ -206,22 +208,32 @@ dotnet_naming_symbols.private_internal_fields.applicable_accessibilities = priva
 ## name all constant fields using PascalCase
 dotnet_naming_rule.constant_fields_should_be_pascal_case.severity = error
 dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols  = constant_fields
-dotnet_naming_rule.constant_fields_should_be_pascal_case.style    = pascal_case_style
+dotnet_naming_rule.constant_fields_should_be_pascal_case.style = pascal_case_style
 
 ## static fields should be pascal_case
 dotnet_naming_rule.static_fields_should_be_pascal_case.severity = error
 dotnet_naming_rule.static_fields_should_be_pascal_case.symbols  = open_static_fields
-dotnet_naming_rule.static_fields_should_be_pascal_case.style    = pascal_case_style
+dotnet_naming_rule.static_fields_should_be_pascal_case.style = pascal_case_style
 
 ## internal and private fields should be camel_case
 dotnet_naming_rule.camel_case_for_private_internal_fields.severity = error
 dotnet_naming_rule.camel_case_for_private_internal_fields.symbols  = private_internal_fields
-dotnet_naming_rule.camel_case_for_private_internal_fields.style    = camel_case_style
+dotnet_naming_rule.camel_case_for_private_internal_fields.style = camel_case_style
 
 ## Properties should be pascal_case
 dotnet_naming_rule.properties_should_be_pascal_case.severity = error
 dotnet_naming_rule.properties_should_be_pascal_case.symbols  = properties
-dotnet_naming_rule.properties_should_be_pascal_case.style    = pascal_case_style
+dotnet_naming_rule.properties_should_be_pascal_case.style = pascal_case_style
 
 
 dotnet_diagnostic.IDE0055.severity = error
+csharp_using_directive_placement = outside_namespace:silent
+csharp_prefer_simple_using_statement = true:suggestion
+csharp_style_namespace_declarations = block_scoped:silent
+csharp_style_prefer_method_group_conversion = true:silent
+csharp_style_prefer_top_level_statements = true:silent
+csharp_style_prefer_primary_constructors = true:suggestion
+csharp_style_expression_bodied_operators = false:silent
+csharp_style_expression_bodied_lambdas = true:silent
+csharp_style_expression_bodied_local_functions = false:silent
+csharp_indent_labels = one_less_than_current
